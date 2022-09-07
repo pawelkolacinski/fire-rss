@@ -7,7 +7,7 @@ import ChannelArticle from './ChannelArticle'
 
 export default function Channel({ channel }) {
   const { fetchRSSChannel, isLoading, error, data } = useRSSFetch(channel.url)
-  const [showArticlesCount, setShowArticlesCount] =useState(4)
+  const [showArticlesCount, setShowArticlesCount] = useState(4)
 
   useEffect(() => {
     fetchRSSChannel()
@@ -17,7 +17,7 @@ export default function Channel({ channel }) {
   console.log(channelData)
 
   return (
-    <Box sx={{ mb: {xs:8, md:8} }}>
+    <Box sx={{ mb: { xs: 8, md: 8 } }}>
       {error && <Alert severity="error">There is an error: {error} </Alert>}
       {isLoading && (
         <Box sx={{ textAlign: 'center' }}>
@@ -28,11 +28,21 @@ export default function Channel({ channel }) {
         channelData.item
           .filter((item, index) => index < showArticlesCount)
           .map((article, index) => (
-            <ChannelArticle article={article} channelInfo={channelData} key={article.link}/>
+            <ChannelArticle
+              article={article}
+              channelInfo={channelData}
+              key={article.link}
+            />
           ))}
-        {channelData && (
-            <Button sx={{display:'block',mx:'auto'}} variant="outlined" onClick={() => setShowArticlesCount(count => count + 4)}>Load more from {channelData.image.title ?? 'this channel'} </Button>
-        )}
+      {channelData && (
+        <Button
+          sx={{ display: 'block', mx: 'auto' }}
+          variant="outlined"
+          onClick={() => setShowArticlesCount((count) => count + 4)}
+        >
+          Load more from {channelData.image.title ?? 'this channel'}{' '}
+        </Button>
+      )}
     </Box>
   )
 }
