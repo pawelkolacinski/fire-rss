@@ -54,7 +54,7 @@ export default function Settings() {
                 key={index}
               >
                 <TextField
-                  fullWidth 
+                  fullWidth
                   required
                   label={`Channel ${index + 1}`}
                   variant="outlined"
@@ -78,7 +78,7 @@ export default function Settings() {
 
           <Box sx={{ display: 'flex', alignItems: 'center', gap: 2, my: 0 }}>
             <TextField
-              fullWidth 
+              fullWidth
               id="addChannel"
               label="Add channel"
               variant="outlined"
