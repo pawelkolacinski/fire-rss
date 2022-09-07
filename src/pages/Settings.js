@@ -45,7 +45,7 @@ export default function Settings() {
             <Alert severity="success">Settings saved</Alert>
           </Fade>
           <Typography variant="h5" component="h2">
-            Channels
+            RSS Channels
           </Typography>
           {channels.length > 0 &&
             channels.map((channel, index) => (
@@ -54,6 +54,7 @@ export default function Settings() {
                 key={index}
               >
                 <TextField
+                  fullWidth 
                   required
                   label={`Channel ${index + 1}`}
                   variant="outlined"
@@ -75,8 +76,9 @@ export default function Settings() {
               </Box>
             ))}
 
-          <Box sx={{ display: 'flex', alignItems: 'center', gap: 2, my: 6 }}>
+          <Box sx={{ display: 'flex', alignItems: 'center', gap: 2, my: 0 }}>
             <TextField
+              fullWidth 
               id="addChannel"
               label="Add channel"
               variant="outlined"

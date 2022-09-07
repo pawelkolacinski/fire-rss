@@ -17,7 +17,7 @@ export default function Channel({ channel }) {
   console.log(channelData)
 
   return (
-    <Box sx={{ m: {xs:0, md:0} , p: {xs:0, md:0} }}>
+    <Box sx={{ mb: {xs:8, md:8} }}>
       {error && <Alert severity="error">There is an error: {error} </Alert>}
       {isLoading && (
         <Box sx={{ textAlign: 'center' }}>
@@ -31,7 +31,7 @@ export default function Channel({ channel }) {
             <ChannelArticle article={article} channelInfo={channelData} key={article.link}/>
           ))}
         {channelData && (
-            <Button sx={{display:'block',mx:'auto'}} variant="contained" onClick={() => setShowArticlesCount(count => count + 4)}>Load more from {channelData.image.title ?? 'this channel'} </Button>
+            <Button sx={{display:'block',mx:'auto'}} variant="outlined" onClick={() => setShowArticlesCount(count => count + 4)}>Load more from {channelData.image.title ?? 'this channel'} </Button>
         )}
     </Box>
   )

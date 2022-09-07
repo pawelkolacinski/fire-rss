@@ -1,10 +1,15 @@
-import { Paper, Box, Link, Typography } from '@mui/material'
+import { Paper, Box, Link, Typography, Button } from '@mui/material'
 import { format} from 'date-fns'
 
 
 export default function ChannelArticle({ channelInfo, article }) {
 
-  const pubDate = format(new Date(article.pubDate), 'dd-MM-yyyy HH:mm:ss')
+    let pubDate = 'Date unknown'
+    try { 
+        pubDate = format(new Date(article.pubDate), 'dd-MM-yyyy HH:mm:ss')
+    } catch(error) {
+
+    }
     
 
   return (
@@ -23,14 +28,17 @@ export default function ChannelArticle({ channelInfo, article }) {
             <img src={channelInfo.image.url} alt={channelInfo.image.title} style={{width:'100%',maxWidth:'150px'}}  />
         
       </Link>
-      <Box sx={{ flexGrow: 1, p: 2 }}>
-        <Link href={article.link} underline="none">
+      <Box sx={{ flexGrow: 1, p: 2  }}>
+        <Link href={article.link} sx={{display:'flex', flexDirection:'column', height:'100%'}} underline="none" target="_blank">
           <Typography variant="p">
             Publication date: {pubDate}
           </Typography>
           <Typography variant="h6" component="h2">
-            {article.title}
+             {typeof article.title === 'string' ? article.title  : 'Title unknown'} 
           </Typography>
+          <Button variant="contained" sx={{alignSelf:'end', mt:'auto'}}>
+            Go to Article
+          </Button>
         </Link>
       </Box>
     </Paper>
