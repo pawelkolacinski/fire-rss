@@ -6,7 +6,7 @@ import Login from './pages/Login'
 import Register from './pages/Register'
 import Container from '@mui/material/Container'
 
-import { orange } from '@mui/material/colors'
+import {  red } from '@mui/material/colors'
 import { ThemeProvider, createTheme } from '@mui/material/styles'
 
 import './App.css'
@@ -17,7 +17,7 @@ function App() {
   const theme = createTheme({
     palette: {
       primary: {
-        main: orange[500],
+        main: red[400],
       },
     },
   })

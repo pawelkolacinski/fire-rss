@@ -18,9 +18,13 @@ export default function Navbar() {
           aria-label="menu"
           sx={{ mr: 2 }}
         ></IconButton>
-        <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-          Fire RSS
-        </Typography>
+        <RouterLink to="/" style={{textDecoration:'none'}}>
+          <Typography variant="h6" component="div"  >
+            Fire RSS
+          </Typography>
+        </RouterLink>
+          
+        
         <ResponsiveNavBar>
           <Button color="inherit" component={RouterLink} to="/">
             Home
