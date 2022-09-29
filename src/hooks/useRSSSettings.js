@@ -3,7 +3,11 @@ import { useState, useEffect, useCallback, useMemo } from 'react'
 const useRSSSettings = () => {
   const defaultSettings = useMemo(
     () => ({
-      channels: [],
+      channels: process.env.REACT_APP_RSS_DEFAULT_CHANNELS
+        ? process.env.REACT_APP_RSS_DEFAULT_CHANNELS.split(',').map((e) => ({
+            url: e.trim(),
+          }))
+        : [],
     }),
     []
   )
