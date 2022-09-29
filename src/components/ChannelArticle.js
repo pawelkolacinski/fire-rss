@@ -27,8 +27,7 @@ export default function ChannelArticle({ channelInfo, article }) {
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
-          p: 2,
-          color:'black'
+          p: 2
         }}
       >
         <img
@@ -40,7 +39,7 @@ export default function ChannelArticle({ channelInfo, article }) {
       <Box sx={{ flexGrow: 1, p: 2 }}>
         <Link
           href={article.link}
-          sx={{ display: 'flex', flexDirection: 'column', height: '100%' }}
+          sx={{ display: 'flex', flexDirection: 'column', height: '100%', color:'black' }}
           underline="none"
           target="_blank"
         >
