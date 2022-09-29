@@ -14,7 +14,6 @@ export default function Channel({ channel }) {
   }, [fetchRSSChannel])
 
   const channelData = data?.channel
-  console.log(channelData)
 
   return (
     <Box sx={{ mb: { xs: 8, md: 8 } }}>
