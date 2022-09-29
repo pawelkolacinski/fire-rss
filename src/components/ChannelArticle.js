@@ -44,7 +44,7 @@ export default function ChannelArticle({ channelInfo, article }) {
           target="_blank"
         >
           <Typography variant="p">Publication date: {pubDate}</Typography>
-          <Typography variant="h6" component="h2">
+          <Typography variant="h6" component="h2" sx={{mt: {xs:1, sm:'auto'}}}>
             {typeof article.title === 'string'
               ? article.title
               : 'Title unknown'}
