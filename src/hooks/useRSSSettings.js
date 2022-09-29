@@ -4,7 +4,7 @@ const useRSSSettings = () => {
   const defaultSettings = useMemo(
     () => ({
       channels: process.env.REACT_APP_RSS_DEFAULT_CHANNELS
-        ? process.env.REACT_APP_RSS_DEFAULT_CHANNELS.split(',').map((e) => ({
+        ? process.env.REACT_APP_RSS_DEFAULT_CHANNELS.split(' ').map((e) => ({
             url: e.trim(),
           }))
         : [],
@@ -12,7 +12,9 @@ const useRSSSettings = () => {
     []
   )
 
-  const [settings, setSettings] = useState(defaultSettings)
+  
+
+  const [settings, setSettings] = useState({channels: []})
   const [savingSuccess, setSavingSuccess] = useState(false)
   const channels = settings.channels
 
@@ -24,6 +26,7 @@ const useRSSSettings = () => {
     if (localStorage.getItem('rss_settings') === null) {
       localStorage.setItem('rss_settings', JSON.stringify(_settings))
     }
+    
     setSettings(_settings)
   }, [defaultSettings])
 
