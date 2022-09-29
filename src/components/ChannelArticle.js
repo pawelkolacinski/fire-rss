@@ -49,7 +49,7 @@ export default function ChannelArticle({ channelInfo, article }) {
               ? article.title
               : 'Title unknown'}
           </Typography>
-          <Button variant="contained" sx={{ alignSelf: 'end', mt: 'auto' }}>
+          <Button variant="contained" sx={{ alignSelf: {xs:'center', sm: 'end'}, mt: {xs:2, sm:'auto'} }}>
             Go to Article
           </Button>
         </Link>

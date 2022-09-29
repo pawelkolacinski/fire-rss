@@ -99,7 +99,7 @@ export default function Settings() {
 
           <Button
             type="submit"
-            sx={{ mx: 'auto', display: 'block' }}
+            sx={{ mx: 'auto', display: 'block', my:2 }}
             variant="contained"
           >
             Save
