@@ -28,6 +28,7 @@ export default function ChannelArticle({ channelInfo, article }) {
           alignItems: 'center',
           justifyContent: 'center',
           p: 2,
+          color:'black'
         }}
       >
         <img
