@@ -6,7 +6,7 @@ import MenuIcon from '@mui/icons-material/Menu'
 import MenuItem from '@mui/material/MenuItem'
 import Typography from '@mui/material/Typography'
 
-export default function ResponsiveNavBar({ children }) {
+export default function ResponsiveNavBarMenu({ children }) {
   const [anchorElNav, setAnchorElNav] = useState(null)
 
   const handleOpenNavMenu = (event) => {
@@ -28,7 +28,7 @@ export default function ResponsiveNavBar({ children }) {
       >
         <IconButton
           size="large"
-          aria-label="account of current user"
+          aria-label="Settings"
           aria-controls="menu-appbar"
           aria-haspopup="true"
           onClick={handleOpenNavMenu}

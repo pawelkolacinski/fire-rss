@@ -5,7 +5,7 @@ import Typography from '@mui/material/Typography'
 import Button from '@mui/material/Button'
 import IconButton from '@mui/material/IconButton'
 import { Link as RouterLink } from 'react-router-dom'
-import ResponsiveNavBar from './ResponsiveNavBar'
+import ResponsiveNavBarMenu from './ResponsiveNavBarMenu'
 
 export default function Navbar() {
   return (
@@ -24,14 +24,14 @@ export default function Navbar() {
           </Typography>
         </RouterLink>
 
-        <ResponsiveNavBar>
+        <ResponsiveNavBarMenu>
           <Button color="inherit" component={RouterLink} to="/">
             Home
           </Button>
           <Button color="inherit" component={RouterLink} to="/settings">
             Settings
           </Button>
-        </ResponsiveNavBar>
+        </ResponsiveNavBarMenu>
       </Toolbar>
     </AppBar>
   )
